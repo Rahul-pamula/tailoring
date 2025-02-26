@@ -1,1 +1,1 @@
-web: gunicorn tailoring.wsgi:application
+web: gunicorn tailoring.wsgi
