@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Design, Review
 from .forms import ReviewForm, ContactForm  # Ensure ContactForm is imported
+from django.conf import settings
+from django.core.files.storage import default_storage
 
 def index(request):
-    designs = Design.objects.all()  
-    return render(request, "shop/index.html", {"designs": designs})  
+    designs = Design.objects.all()
+    return render(request, "shop/index.html", {"designs": designs})
 
 def designs(request):
     designs = Design.objects.all()
