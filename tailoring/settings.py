@@ -5,10 +5,12 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['https://tailoring.onrender.com']
-CSRF_TRUSTED_ORIGINS = 'CSRF_TRUSTED_ORIGINS = ['https://your-app-name.onrender.com']
 
+# ✅ Fix ALLOWED_HOSTS
+ALLOWED_HOSTS = ['tailoring.onrender.com']
 
+# ✅ Fix CSRF_TRUSTED_ORIGINS
+CSRF_TRUSTED_ORIGINS = ['https://tailoring.onrender.com']
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-aw-9o%1tzwyfb+ww$l)xjx0-3om)y%le8wrcdh=lpfqz5ek=7h')
 
@@ -21,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'whitenoise.runserver_nostatic',  # For static file management
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -68,15 +72,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Localization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-INSTALLED_APPS += ['cloudinary', 'cloudinary_storage']
-
+# ✅ Cloudinary Configuration (Fix indentation)
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
@@ -85,3 +81,4 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
