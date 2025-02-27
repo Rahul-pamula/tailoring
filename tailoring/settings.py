@@ -76,9 +76,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+    'CLOUD_NAME': os.getenv('ddr5ljpog'),
+    'API_KEY': os.getenv('979439571117521'),
+    'API_SECRET': os.getenv('9pW2FbN34ez9GHdXogK7Rs6R3p4'),
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
