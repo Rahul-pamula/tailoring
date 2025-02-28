@@ -6,13 +6,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-# ✅ Fix ALLOWED_HOSTS
-ALLOWED_HOSTS = ['tailoring.onrender.com']
+# ✅ Allowed Hosts for Render Deployment
+ALLOWED_HOSTS = ['tailoring.onrender.com', '127.0.0.1', 'localhost']
 
-# ✅ Fix CSRF_TRUSTED_ORIGINS
-CSRF_TRUSTED_ORIGINS = ['https://tailoring.onrender.com']
+# ✅ CSRF Trusted Origins
+CSRF_TRUSTED_ORIGINS = ['https://tailoring.onrender.com', 'http://127.0.0.1']
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-aw-9o%1tzwyfb+ww$l)xjx0-3om)y%le8wrcdh=lpfqz5ek=7h')
+# ✅ Secret Key (Load from Environment)
+SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key-here')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,8 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop',
-    'whitenoise.runserver_nostatic',  # For static file management
+    'shop',  # Your app
+    'whitenoise.runserver_nostatic',  # Static file handling
     'cloudinary',
     'cloudinary_storage',
 ]
@@ -58,21 +59,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tailoring.wsgi.application'
 
+# ✅ Database Configuration
 DATABASES = {
     'default': dj_database_url.config(default=f'sqlite:///{BASE_DIR}/db.sqlite3')
 }
 
-# ✅ Correct media settings
+# ✅ Media Files (For User Uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# ✅ Correct static file handling (for Render)
+# ✅ Static Files Handling (Render Deployment)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# ✅ Cloudinary Configuration (Fix indentation)
+# ✅ Cloudinary Configuration
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
