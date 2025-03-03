@@ -7,10 +7,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 # ✅ Allowed Hosts for Render Deployment
-ALLOWED_HOSTS = ['tailoring.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['rajeshwari-tailoring.onrender.com', '127.0.0.1', 'localhost']
 
-# ✅ CSRF Trusted Origins
-CSRF_TRUSTED_ORIGINS = ['https://tailoring.onrender.com', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = [
+    'https://rajeshwari-tailoring.onrender.com',
+    'http://127.0.0.1',
+    'http://localhost',
+]
+
 
 # ✅ Secret Key (Load from Environment)
 SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key-here')
@@ -22,18 +26,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop',  # Your app
-    'whitenoise.runserver_nostatic',  # Static file handling
+    'shop',
+    'whitenoise.runserver_nostatic',  # For static file management
     'cloudinary',
     'cloudinary_storage',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -77,10 +82,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ✅ Cloudinary Configuration
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
