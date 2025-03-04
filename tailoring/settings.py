@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'whitenoise.runserver_nostatic',  # For static file management
+    'corsheaders',
     'cloudinary',
     'cloudinary_storage',
 ]
@@ -42,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'tailoring.urls'
@@ -81,6 +83,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # ✅ Cloudinary Configuration
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CORS_ALLOWED_ORIGINS = [
+    "https://res.cloudinary.com",  
+]
 
 
 CLOUDINARY_STORAGE = {

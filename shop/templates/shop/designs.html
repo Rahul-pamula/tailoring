@@ -33,18 +33,22 @@
     <div class="container mt-5">
         <h2 class="text-center">Available Designs</h2>
         <div class="row">
-            {% for design in designs %}
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="{{ design.image.url }}" class="card-img-top" alt="{{ design.name }}" 
-                         onerror="this.onerror=null;this.src='{% static 'shop/images/placeholder.jpg' %}';">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ design.name }}</h5>
-                        <p class="card-text">Price: ₹{{ design.price }}</p>
+            {% if designs %}
+                {% for design in designs %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ design.image.url }}" class="card-img-top" alt="{{ design.name }}" 
+                             onerror="this.onerror=null;this.src='https://via.placeholder.com/300';">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ design.name }}</h5>
+                            <p class="card-text">Price: ₹{{ design.price }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <p class="text-center">No designs available at the moment.</p>
+            {% endif %}
         </div>
     </div>
 
