@@ -37,8 +37,13 @@
                 {% for design in designs %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
+                        {% comment %} <!-- Debug: Print Image URL -->
+                        <p>Image URL: {{ design.image.url }}</p> {% endcomment %}
+
+                        <!-- Image with Error Handling -->
                         <img src="{{ design.image.url }}" class="card-img-top" alt="{{ design.name }}" 
                              onerror="this.onerror=null;this.src='https://via.placeholder.com/300';">
+                        
                         <div class="card-body">
                             <h5 class="card-title">{{ design.name }}</h5>
                             <p class="card-text">Price: ₹{{ design.price }}</p>
