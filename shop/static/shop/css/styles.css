@@ -129,7 +129,7 @@ body::before {
 }  
 
 .contact-container label {
-    color: rgb(0, 0, 0) !important; /* Ensure white text */
+    color: rgb(0, 0, 0) !important; /* Ensure black text */
 }
 
 .contact-container form {
@@ -165,4 +165,56 @@ body::before {
 .reviews-container h2 {
     color: #ff9800; /* Highlight title */
     text-align: center;
-    mar
+    margin-bottom: 20px;
+}
+
+/* Review Cards */
+.review-card {
+    background: rgba(255, 255, 255, 0.9); /* Light background */
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.review-card h5 {
+    color: #e65100; /* Title color */
+}
+
+.review-card p {
+    font-size: 1rem;
+}
+
+/* Image in Reviews */
+.review-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .design-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .design-gallery {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row on very small screens */
+    }
+}

@@ -22,7 +22,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'designs' %}">Designs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'designs' %}">Designs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'customer_reviews' %}">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </div>
@@ -37,10 +38,7 @@
                 {% for design in designs %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        {% comment %} <!-- Debug: Print Image URL -->
-                        <p>Image URL: {{ design.image.url }}</p> {% endcomment %}
-
-                        <!-- Image with Error Handling -->
+                        <!-- Image with Cloudinary Error Handling -->
                         <img src="{{ design.image.url }}" class="card-img-top" alt="{{ design.name }}" 
                              onerror="this.onerror=null;this.src='https://via.placeholder.com/300';">
                         

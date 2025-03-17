@@ -8,8 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'shop/css/styles.css' %}">
 </head>
 <body>
@@ -23,42 +21,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/designs/' %}active{% endif %}" href="{% url 'designs' %}">Designs</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/customer_reviews/' %}active{% endif %}" href="{% url 'customer_reviews' %}">Reviews</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'designs' %}">Designs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'customer_reviews' %}">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   <!-- Contact Form Section -->
-<div class="container mt-5 contact-container">
-    <h2 class="text-center mb-4">Contact Us</h2>
-    <p> Have any questions? Fill out the form below and we’ll get back to you.</p>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card p-4 shadow">
-                <form method="post">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="id_name" class="form-label">Your Name</label>
-                        {{ form.name }}
-                    </div>
-                    <div class="mb-3">
-                        <label for="id_email" class="form-label">Your Email</label>
-                        {{ form.email }}
-                    </div>
-                    <div class="mb-3">
-                        <label for="id_message" class="form-label">Message</label>
-                        {{ form.message }}
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <!-- Contact Information -->
+    <div class="container mt-5 contact-container">
+        <h2 class="text-center mb-4">Contact Information</h2>
+        <p><strong>Name:</strong> RAJESHWARI </p>
+        <p><strong>Address:</strong> RAJESHWARI TAILORING,6-5-70/4/A/1,Lokya thanda road,Maripeda Banglow,Mahabubabad,Telangana,India</p>
+        <p><strong>Phone:</strong> 9849098510</p>
+        <p><strong>Email:</strong> rahulpamula123@gmail.com</p>
     </div>
-</div>    
-<body class="contact-page">
+
+</body>
+</html>
