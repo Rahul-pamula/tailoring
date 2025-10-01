@@ -4,7 +4,7 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 # ✅ Allowed Hosts for Render Deployment
 ALLOWED_HOSTS = ['rajeshwari-tailoring.onrender.com', '127.0.0.1', 'localhost']
@@ -84,7 +84,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ✅ Cloudinary Configuration
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CORS_ALLOWED_ORIGINS = [
-    "https://res.cloudinary.com",  
+    "https://res.cloudinary.com",
 ]
 
 
@@ -93,4 +93,3 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
-

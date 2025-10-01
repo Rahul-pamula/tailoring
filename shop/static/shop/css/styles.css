@@ -1,13 +1,13 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background: url("/static/images/background.jpg") no-repeat center center fixed;
-    background-size: cover; /* Ensures full coverage */
-    color: white; /* Default text color for better visibility */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     position: relative;
+    min-height: 100vh;
 }
 
 /* Dark Overlay for Better Text Readability */
@@ -18,58 +18,114 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
 
 /* Navbar Styling */
 .navbar {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #ff6b6b, #ffa500);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #fff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffeaa7 !important;
 }
 
 /* Hero Section */
 .hero-section {
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Text color */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     width: 100%;
+    background: url('/static/shop/images/background.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero-content {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    position: relative;
 }
 
 .hero-section h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .hero-section p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.hero-section .btn {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ffa500, #ff6b6b);
 }
 
 /* Featured Designs Section */
 .featured {
     padding: 50px 0;
-    background: #fff; /* Light background */
-    color: #222; /* Dark text */
+    background: #fff;
+    /* Light background */
+    color: #222;
+    /* Dark text */
 }
 
 .featured h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #f76b1c; /* Highlight */
+    color: #f76b1c;
+    /* Highlight */
 }
 
 /* Design Gallery (Instagram-Like Grid) */
 .design-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 per row */
     gap: 10px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.7);
@@ -93,13 +149,16 @@ body::before {
 .about {
     padding: 40px 20px;
     background: #f4f4f4;
-    color: #222; /* Dark text */
+    color: #222;
+    /* Dark text */
 }
 
 /* Contact Page Styling */
 .contact-container {
-    background: rgba(76, 74, 74, 0.7); /* Dark overlay */
-    color: white; /* Light text */
+    background: rgba(76, 74, 74, 0.7);
+    /* Dark overlay */
+    color: white;
+    /* Light text */
     padding: 50px;
     border-radius: 10px;
 }
@@ -107,8 +166,10 @@ body::before {
 /* Ensure input text is visible */
 .contact-container input,
 .contact-container textarea {
-    color: black !important; /* Ensures text inside input fields is visible */
-    background: white !important; /* White background for contrast */
+    color: black !important;
+    /* Ensures text inside input fields is visible */
+    background: white !important;
+    /* White background for contrast */
     border: 1px solid #ccc;
     padding: 10px;
     width: 90%;
@@ -117,30 +178,34 @@ body::before {
 
 .contact-container input::placeholder,
 .contact-container textarea::placeholder {
-    color: #888 !important; /* Light grey placeholder text */
+    color: #888 !important;
+    /* Light grey placeholder text */
 }
 
 .contact-container h2 {
     color: rgb(255, 254, 254);
-}  
+}
 
 .contact-container p {
     color: rgb(255, 255, 255);
-}  
+}
 
 .contact-container label {
-    color: rgb(0, 0, 0) !important; /* Ensure black text */
+    color: rgb(0, 0, 0) !important;
+    /* Ensure black text */
 }
 
 .contact-container form {
-    background: rgb(241, 239, 239); /* Slightly transparent */
+    background: rgb(241, 239, 239);
+    /* Slightly transparent */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.195);
 }
 
 .contact-container button {
-    background-color: #ff5722; /* Orange button */
+    background-color: #ff5722;
+    /* Orange button */
     border: none;
     padding: 10px;
     color: white;
@@ -154,23 +219,27 @@ body::before {
 
 /* Reviews Page Styling */
 .reviews-container {
-    width: 100%; /* Ensure full width */
+    width: 100%;
+    /* Ensure full width */
     background: url("/static/images/reviews-bg.jpg") no-repeat center center fixed, #333;
-    background-size: cover; /* Ensures background fills the container */
+    background-size: cover;
+    /* Ensures background fills the container */
     padding: 50px;
     color: white !important;
     border-radius: 10px;
 }
 
 .reviews-container h2 {
-    color: #ff9800; /* Highlight title */
+    color: #ff9800;
+    /* Highlight title */
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* Review Cards */
 .review-card {
-    background: rgba(255, 255, 255, 0.9); /* Light background */
+    background: rgba(255, 255, 255, 0.9);
+    /* Light background */
     color: #333;
     border-radius: 10px;
     padding: 20px;
@@ -180,7 +249,8 @@ body::before {
 }
 
 .review-card h5 {
-    color: #e65100; /* Title color */
+    color: #e65100;
+    /* Title color */
 }
 
 .review-card p {
@@ -209,12 +279,14 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .design-gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 per row on smaller screens */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 per row on smaller screens */
     }
 }
 
 @media (max-width: 576px) {
     .design-gallery {
-        grid-template-columns: repeat(1, 1fr); /* 1 per row on very small screens */
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 per row on very small screens */
     }
 }

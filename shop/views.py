@@ -1,17 +1,29 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from .models import Design, Review
 from .forms import ReviewForm, ContactForm  # Ensure ContactForm is imported
 
+
 def index(request):
     designs = Design.objects.all()
-    return render(request, "shop/index.html", {"designs": designs})
+    return render(request, "shop/spa.html", {"designs": designs})
+
 
 def designs(request):
-    designs = Design.objects.all()
-    return render(request, "shop/designs.html", {"designs": designs})
+    query = request.GET.get('q')
+    if query:
+        if query.isdigit():
+            designs = Design.objects.filter(design_number=int(query))
+        else:
+            designs = Design.objects.filter(name__icontains=query)
+    else:
+        designs = Design.objects.all()
+    return render(request, "shop/spa.html", {"designs": designs})
+
 
 def customer_reviews(request):
-    reviews = Review.objects.filter(approved=True)  # Show only approved reviews
+    reviews = Review.objects.filter(
+        approved=True)  # Show only approved reviews
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
@@ -23,7 +35,8 @@ def customer_reviews(request):
     else:
         form = ReviewForm()
 
-    return render(request, 'shop/reviews.html', {"reviews": reviews, "form": form})
+    return render(request, 'shop/spa.html', {"reviews": reviews, "form": form})
+
 
 def contact(request):
     if request.method == "POST":
@@ -34,4 +47,33 @@ def contact(request):
     else:
         form = ContactForm()
 
-    return render(request, "shop/contact.html", {"form": form})
+    return render(request, "shop/spa.html", {"form": form})
+
+# API Views
+
+
+def api_designs(request):
+    designs = Design.objects.all()
+    data = []
+    for design in designs:
+        data.append({
+            'id': design.id,
+            'name': design.name,
+            'price': str(design.price),
+            'image': design.image.url if design.image else None,
+        })
+    return JsonResponse(data, safe=False)
+
+
+def api_reviews(request):
+    reviews = Review.objects.filter(approved=True)
+    data = []
+    for review in reviews:
+        data.append({
+            'id': review.id,
+            'name': review.name,
+            'review_text': review.review_text,
+            'image': review.image.url if review.image else None,
+            'created_at': review.created_at.isoformat(),
+        })
+    return JsonResponse(data, safe=False)

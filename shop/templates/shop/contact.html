@@ -1,43 +1,21 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+{% extends 'shop/base.html' %}
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'shop/css/styles.css' %}">
-</head>
-<body>
+{% block title %}Contact Us{% endblock %}
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'index' %}">RAJESHWARI TAILORING</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'designs' %}">Designs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'customer_reviews' %}">Reviews</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{% url 'contact' %}">Contact</a></li>
-                </ul>
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Contact Information</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p class="mb-3"><strong>Name:</strong> RAJESHWARI</p>
+                    <p class="mb-3"><strong>Address:</strong> RAJESHWARI TAILORING, 6-5-70/4/A/1, Lokya Thanda Road, Maripeda Bungalow, Mahabubabad, Telangana, India</p>
+                    <p class="mb-3"><strong>Phone:</strong> <a href="tel:9849098510">9849098510</a></p>
+                    <p class="mb-3"><strong>Email:</strong> <a href="mailto:rahulpamula123@gmail.com">rahulpamula123@gmail.com</a></p>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <!-- Contact Information -->
-    <div class="container mt-5 contact-container">
-        <h2 class="text-center mb-4">Contact Information</h2>
-        <p><strong>Name:</strong> RAJESHWARI </p>
-        <p><strong>Address:</strong> RAJESHWARI TAILORING,6-5-70/4/A/1,Lokya thanda road,Maripeda Banglow,Mahabubabad,Telangana,India</p>
-        <p><strong>Phone:</strong> 9849098510</p>
-        <p><strong>Email:</strong> rahulpamula123@gmail.com</p>
     </div>
-
-</body>
-</html>
+</div>
+{% endblock %}
