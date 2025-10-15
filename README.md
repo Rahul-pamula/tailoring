@@ -2,7 +2,7 @@
 
 A modern tailoring website showcasing custom designs, customer reviews, and contact functionality. Built with a Django backend for content management and a React frontend for an interactive user experience.
 
-## Features
+<Features>
 
 - **Design Gallery**: Browse and search custom tailoring designs with unique design numbers
 - **Customer Reviews**: View approved customer testimonials with optional images
