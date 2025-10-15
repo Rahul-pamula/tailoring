@@ -4,7 +4,7 @@ A modern tailoring website showcasing custom designs, customer reviews, and cont
 
 <Features>
 
-- **Design Gallery**: Browse and search custom tailoring designs with unique design numbers
+  <Design Gallery>: Browse and search custom tailoring designs with unique design numbers
 - **Customer Reviews**: View approved customer testimonials with optional images
 - **Contact Form**: Easy way for customers to get in touch
 - **Admin Panel**: Django admin interface for managing designs, reviews, and contacts
