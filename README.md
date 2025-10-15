@@ -11,7 +11,7 @@ A modern tailoring website showcasing custom designs, customer reviews, and cont
 - **Image Management**: Cloudinary integration for efficient image storage and delivery
 - **Responsive Design**: Mobile-friendly interface built with Tailwind CSS
 
-## Tech Stack
+<Tech Stack> 
 
 ### Backend
 - **Django 5.1.4**: Web framework
