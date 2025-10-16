@@ -14,7 +14,7 @@ A modern tailoring website showcasing custom designs, customer reviews, and cont
 <Tech Stack> 
 
 ### Backend
-- **Django 5.1.4**: Web framework
+  <Django 5.1.4>: Web framework
 - **SQLite**: Database (configurable for production)
 - **Cloudinary**: Image storage and management
 - **WhiteNoise**: Static file serving
