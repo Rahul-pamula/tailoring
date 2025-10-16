@@ -22,7 +22,7 @@ A modern tailoring website showcasing custom designs, customer reviews, and cont
 
 ### Frontend
   <React>: UI library
-- **TypeScript**: Type-safe JavaScript
+  <TypeScript>: Type-safe JavaScript
 - **Vite**: Build tool and development server
 - **Tailwind CSS**: Utility-first CSS framework
 - **shadcn/ui**: Component library
