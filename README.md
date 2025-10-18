@@ -25,7 +25,7 @@ A modern tailoring website showcasing custom designs, customer reviews, and cont
   <TypeScript>: Type-safe JavaScript
   <Vite>: Build tool and development server
   <Tailwind CSS>: Utility-first CSS framework
-- **shadcn/ui**: Component library
+  <shadcn/ui>: Component library
 
 ## Installation
 
