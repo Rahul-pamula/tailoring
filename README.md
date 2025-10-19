@@ -124,7 +124,7 @@ This project is configured for deployment on Render:
    - Cloudinary credentials
    - `DATABASE_URL` (if using PostgreSQL)
 
-## Project Structure
+### Project Structure
 
 ```
 tailoring/
