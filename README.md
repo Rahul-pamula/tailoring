@@ -91,7 +91,7 @@ npm install
 npm run dev
 ```
 
-## Usage
+### Usage
 
 ### Running the Backend
 ```bash
