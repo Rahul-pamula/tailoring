@@ -27,7 +27,7 @@ A modern tailoring website showcasing custom designs, customer reviews, and cont
   <Tailwind CSS>: Utility-first CSS framework
   <shadcn/ui>: Component library
 
-## Installation
+### Installation
 
 ### Prerequisites
 - Python 3.8+
