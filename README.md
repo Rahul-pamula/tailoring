@@ -112,7 +112,7 @@ Access the Django admin at `http://127.0.0.1:8000/admin/` to manage:
 - Reviews (approve/reject customer reviews)
 - Contacts (view customer inquiries)
 
-## Deployment
+### Deployment
 
 This project is configured for deployment on Render:
 
