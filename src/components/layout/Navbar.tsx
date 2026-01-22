@@ -74,7 +74,7 @@ const Navbar = () => {
             </DropdownMenu>
 
             <Button variant="secondary" size="sm" asChild>
-              <a href="http://localhost:8000/admin/" target="_blank" rel="noopener noreferrer">
+              <a href="https://rajeshwari-tailoring-backend.onrender.com/admin/" target="_blank" rel="noopener noreferrer">
                 {t.adminLogin}
               </a>
             </Button>
@@ -141,7 +141,7 @@ const Navbar = () => {
               </div>
 
               <Button variant="secondary" size="sm" asChild className="mx-4 mt-2">
-                <a href="http://localhost:8000/admin/" target="_blank" rel="noopener noreferrer">
+                <a href="https://rajeshwari-tailoring-backend.onrender.com/admin/" target="_blank" rel="noopener noreferrer">
                   {t.adminLogin}
                 </a>
               </Button>
