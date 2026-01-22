@@ -1,0 +1,37 @@
+{% extends 'shop/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Our Designs" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Our Designs" %}</h1>
+
+<div class="designs-grid"
+    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem;">
+    {% for design in designs %}
+    <div class="design-card" style="border: 1px solid #eee; border-radius: 8px; overflow: hidden; background: white;">
+        {% if design.images.first %}
+        <img src="{{ design.images.first.image.url }}" alt="{{ design.name }}"
+            style="width: 100%; height: 250px; object-fit: cover;">
+        {% else %}
+        <div
+            style="width: 100%; height: 250px; background: #f3f4f6; display: flex; align-items: center; justify-content: center;">
+            <span>{% trans "No Image" %}</span>
+        </div>
+        {% endif %}
+        <div style="padding: 1rem;">
+            <span style="font-size: 0.8rem; color: #666; text-transform: uppercase;">{{ design.get_category_display
+                }}</span>
+            <h3 style="margin: 0.5rem 0;">{{ design.name }}</h3>
+            {% if design.price %}
+            <p style="font-weight: bold;">Rs. {{ design.price }}</p>
+            {% else %}
+            <p style="color: #666; font-style: italic;">{% trans "Price on Request" %}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <p>{% trans "No designs found." %}</p>
+    {% endfor %}
+</div>
+{% endblock %}

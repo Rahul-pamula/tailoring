@@ -1,154 +1,73 @@
-# Rajeshwari Couture
+# Welcome to your Lovable project
 
-A modern tailoring website showcasing custom designs, customer reviews, and contact functionality. Built with a Django backend for content management and a React frontend for an interactive user experience.
+## Project info
 
-<Features>
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-  <Design Gallery>: Browse and search custom tailoring designs with unique design numbers
-- **Customer Reviews**: View approved customer testimonials with optional images
-- **Contact Form**: Easy way for customers to get in touch
-- **Admin Panel**: Django admin interface for managing designs, reviews, and contacts
-- **Image Management**: Cloudinary integration for efficient image storage and delivery
-- **Responsive Design**: Mobile-friendly interface built with Tailwind CSS
+## How can I edit this code?
 
-<Tech Stack> 
+There are several ways of editing your application.
 
-### Backend
-  <Django 5.1.4>: Web framework
-- **SQLite**: Database (configurable for production)
-- **Cloudinary**: Image storage and management
-- **WhiteNoise**: Static file serving
-- **Gunicorn**: WSGI server for deployment
+**Use Lovable**
 
-### Frontend
-  <React>: UI library
-  <TypeScript>: Type-safe JavaScript
-  <Vite>: Build tool and development server
-  <Tailwind CSS>: Utility-first CSS framework
-  <shadcn/ui>: Component library
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-### Installation
+Changes made via Lovable will be committed automatically to this repo.
 
-### Prerequisites
-- Python 3.8+
-- Node.js & npm
-- Git
+**Use your preferred IDE**
 
-### Backend Setup
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd tailoring
-```
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+Follow these steps:
 
-3. Install Python dependencies:
-```bash
-pip install -r requirements.txt
-```
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-4. Set up environment variables:
-Create a `.env` file in the root directory with:
-```
-DEBUG=True
-SECRET_KEY=your-secret-key-here
-CLOUDINARY_CLOUD_NAME=your-cloud-name
-CLOUDINARY_API_KEY=your-api-key
-CLOUDINARY_API_SECRET=your-api-secret
-```
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-5. Run migrations:
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
+# Step 3: Install the necessary dependencies.
+npm i
 
-6. Collect static files:
-```bash
-python manage.py collectstatic --noinput
-```
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
-cd rajeshwari-couture-site
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-### Usage
+**Edit a file directly in GitHub**
 
-### Running the Backend
-```bash
-python manage.py runserver
-```
-The Django server will start at `http://127.0.0.1:8000`
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-### Running the Frontend
-```bash
-cd rajeshwari-couture-site
-npm run dev
-```
-The React app will start at `http://localhost:5173`
+**Use GitHub Codespaces**
 
-### Admin Panel
-Access the Django admin at `http://127.0.0.1:8000/admin/` to manage:
-- Designs (add design numbers, names, prices, images)
-- Reviews (approve/reject customer reviews)
-- Contacts (view customer inquiries)
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-### Deployment
+## What technologies are used for this project?
 
-This project is configured for deployment on Render:
+This project is built with:
 
-1. Connect your GitHub repository to Render
-2. Use the `render.yaml` configuration for automatic deployment
-3. Set environment variables in Render dashboard:
-   - `DEBUG=False`
-   - `SECRET_KEY`
-   - Cloudinary credentials
-   - `DATABASE_URL` (if using PostgreSQL)
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-### Project Structure
+## How can I deploy this project?
 
-```
-tailoring/
-├── shop/                    # Django app
-│   ├── models.py           # Database models (Design, Review, Contact)
-│   ├── views.py            # View functions
-│   ├── templates/          # HTML templates
-│   └── static/             # CSS, JS, images
-├── tailoring/              # Django project settings
-├── rajeshwari-couture-site/ # React frontend
-│   ├── src/
-│   │   ├── components/     # Reusable React components
-│   │   ├── pages/          # Page components
-│   │   └── assets/         # Static assets
-│   └── public/             # Public files
-├── media/                  # User-uploaded files
-├── static/                 # Static files
-└── staticfiles/            # Collected static files
-```
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
-### Contributing
+## Can I connect a custom domain to my Lovable project?
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make your changes and commit: `git commit -am 'Add feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

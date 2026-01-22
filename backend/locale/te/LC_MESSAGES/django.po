@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-12 12:36+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/settings.py:127
+msgid "English"
+msgstr "English"
+
+#: core/settings.py:128
+msgid "Telugu"
+msgstr "తెలుగు"
+
+#: shop/templates/shop/base.html:8
+msgid "Tailoring Shop"
+msgstr "టైలరింగ్ షాప్"
+
+#: shop/templates/shop/base.html:82
+msgid "Elegant Stitch"
+msgstr "ఎలిగెంట్ స్టిచ్"
+
+#: shop/templates/shop/base.html:98
+msgid "Admin"
+msgstr "అడ్మిన్"
+
+#: shop/templates/shop/base.html:102
+msgid "Logout"
+msgstr "లాగౌట్"
+
+#: shop/templates/shop/base.html:105
+msgid "Admin Login"
+msgstr "అడ్మిన్ లాగిన్"
+
+#: shop/templates/shop/designs.html:4 shop/templates/shop/designs.html:7
+msgid "Our Designs"
+msgstr "మా డిజైన్లు"
+
+#: shop/templates/shop/designs.html:19
+msgid "No Image"
+msgstr "చిత్రం లేదు"
+
+#: shop/templates/shop/designs.html:29
+msgid "Price on Request"
+msgstr "ధర అభ్యర్థనపై"
+
+#: shop/templates/shop/designs.html:34
+msgid "No designs found."
+msgstr "డిజైన్లు కనుగొనబడలేదు."
+
+#: shop/templates/shop/reviews.html:5
+msgid "Customer Reviews"
+msgstr "కస్టమర్ రివ్యూలు"
+
+#: shop/templates/shop/reviews.html:9
+msgid "Submit a Review"
+msgstr "రివ్యూను సమర్పించండి"
+
+#: shop/templates/shop/reviews.html:27
+msgid "Recent Reviews"
+msgstr "ఇటీవలి రివ్యూలు"
+
+#: shop/templates/shop/reviews.html:44
+msgid "No reviews yet. Be the first!"
+msgstr "ఇంకా రివ్యూలు లేవు. మీరే మొదటిగా రాయండి!"
+
+#: shop/views.py:16
+msgid "Review submitted for approval"
+msgstr "ఆమోదం కోసం రివ్యూ సమర్పించబడింది"
+
+#: templates/admin/login.html:88
+#, fuzzy
+#| msgid "Admin Login"
+msgid "Tailoring Admin Login"
+msgstr "అడ్మిన్ లాగిన్"
+
+#: templates/admin/login.html:92
+msgid "Please correct the error below."
+msgstr ""
+
+#: templates/admin/login.html:107
+msgid "Username:"
+msgstr ""
+
+#: templates/admin/login.html:111
+msgid "Password:"
+msgstr ""
+
+#: templates/admin/login.html:116
+msgid "Log in"
+msgstr ""
+
+#~ msgid "Submit Review"
+#~ msgstr "రివ్యూ పంపండి"

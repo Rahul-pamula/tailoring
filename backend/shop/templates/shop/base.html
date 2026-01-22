@@ -1,0 +1,115 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Tailoring Shop" %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+        }
+
+        nav {
+            background: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #111;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-size: 0.875rem;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .btn-outline {
+            border-color: #d1d5db;
+            color: #374151;
+            background: transparent;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            color: #374151;
+        }
+
+        .lang-btn.active {
+            font-weight: bold;
+            color: #000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="nav-brand">{% trans "Elegant Stitch" %}</a>
+        <div class="nav-links">
+            <!-- Language Switcher -->
+            <form action="{% url 'set_language' %}" method="post" class="lang-switch">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <button type="submit" name="language" value="en"
+                    class="lang-btn {% if LANGUAGE_CODE == 'en' %}active{% endif %}">English</button>
+                <span>|</span>
+                <button type="submit" name="language" value="te"
+                    class="lang-btn {% if LANGUAGE_CODE == 'te' %}active{% endif %}">తెలుగు</button>
+            </form>
+
+            <!-- Auth Buttons -->
+            {% if user.is_authenticated %}
+            {% if user.is_staff %}
+            <span style="font-size: 0.8rem; color: green;">{% trans "Admin" %}</span>
+            {% endif %}
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline">{% trans "Logout" %}</button>
+            </form>
+            {% else %}
+            <a href="{% url 'admin:index' %}" class="btn btn-outline">{% trans "Admin Login" %}</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>
