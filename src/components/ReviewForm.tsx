@@ -29,7 +29,7 @@ const ReviewForm = ({ onSuccess }: ReviewFormProps) => {
         formData.append("rating", rating.toString());
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/en/shop/api/reviews/", {
+            const response = await fetch("https://rajeshwari-tailoring-backend.onrender.com/en/shop/api/reviews/", {
                 method: "POST",
                 body: formData,
             });

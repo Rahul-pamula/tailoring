@@ -21,7 +21,7 @@ const Reviews = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch("http://localhost:8000/en/shop/api/reviews/");
+      const response = await fetch('https://rajeshwari-tailoring-backend.onrender.com/en/shop/api/reviews/');
       if (response.ok) {
         const data = await response.json();
         setReviews(data);
