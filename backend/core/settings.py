@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',  # Must be before django.contrib.staticfiles
+    'cloudinary',
     'shop',
     'rest_framework',
     'corsheaders',
