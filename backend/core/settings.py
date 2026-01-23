@@ -149,16 +149,23 @@ CORS_ALLOW_ALL_ORIGINS = True  # Temporarily allow all origins for testing
 CORS_ALLOW_CREDENTIALS = True
 
 # Cloudinary Configuration for Media Files
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', '')
 
-CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.getenv('CLOUDINARY_URL', '')
-}
+if CLOUDINARY_URL and CLOUDINARY_URL.startswith('cloudinary://'):
+    import cloudinary
+    import cloudinary.uploader
+    import cloudinary.api
 
-# Media files (uploads) - use Cloudinary
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    CLOUDINARY_STORAGE = {
+        'CLOUDINARY_URL': CLOUDINARY_URL
+    }
+    
+    # Media files (uploads) - use Cloudinary
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+else:
+    # Fallback to local storage if Cloudinary not configured
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
