@@ -142,7 +142,7 @@ USE_TZ = True
 
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:8080').split(',')
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:8080,https://tailoring-puce.vercel.app').split(',')
 CORS_ALLOW_CREDENTIALS = True
 
 # Static files (CSS, JavaScript, Images)
