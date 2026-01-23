@@ -149,17 +149,14 @@ CORS_ALLOW_ALL_ORIGINS = True  # Temporarily allow all origins for testing
 CORS_ALLOW_CREDENTIALS = True
 
 # Cloudinary Configuration for Media Files
+# Cloudinary Configuration for Media Files
 CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', '').strip().strip('"').strip("'")
 
 if CLOUDINARY_URL and CLOUDINARY_URL.startswith('cloudinary://'):
+    # Update environment variable so libraries use the clean version
+    os.environ['CLOUDINARY_URL'] = CLOUDINARY_URL
+    
     print(f"✅ Cloudinary URL found! Using Cloudinary storage.")
-    import cloudinary
-    import cloudinary.uploader
-    import cloudinary.api
-
-    CLOUDINARY_STORAGE = {
-        'CLOUDINARY_URL': CLOUDINARY_URL
-    }
     
     # Media files (uploads) - use Cloudinary
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
