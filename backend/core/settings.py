@@ -155,16 +155,30 @@ CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', '').strip().strip('"').strip("'")
 if CLOUDINARY_URL and CLOUDINARY_URL.startswith('cloudinary://'):
     # Update environment variable so libraries use the clean version
     os.environ['CLOUDINARY_URL'] = CLOUDINARY_URL
-    
     print(f"✅ Cloudinary URL found! Using Cloudinary storage.")
     
-    # Media files (uploads) - use Cloudinary
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    STORAGES = {
+        "default": {
+            "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
 else:
     print(f"⚠️ Cloudinary URL not found or invalid (Length: {len(CLOUDINARY_URL)}). Using local storage.")
     # Fallback to local storage if Cloudinary not configured
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -176,8 +190,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# WhiteNoise configuration for static files in production
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# WhiteNoise configuration is now in STORAGES above
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
