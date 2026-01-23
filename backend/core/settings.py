@@ -146,6 +146,18 @@ CORS_ALLOW_ALL_ORIGINS = True  # Temporarily allow all origins for testing
 # CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:8080,https://tailoring-puce.vercel.app').split(',')
 CORS_ALLOW_CREDENTIALS = True
 
+# Cloudinary Configuration for Media Files
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+CLOUDINARY_STORAGE = {
+    'CLOUDINARY_URL': os.getenv('CLOUDINARY_URL', '')
+}
+
+# Media files (uploads) - use Cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
