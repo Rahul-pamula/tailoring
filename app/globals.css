@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cream: #fff7f8;
+  --color-brand-pink: #fff2f3;
+  --color-brand-pink-dark: #ffe4e8;
+  --color-background: #FFF7F8;
+  --color-foreground: #2A2A2A;
+  --color-text-primary: #2A2A2A;
+  --color-text-secondary: #6B7280;
+  --color-card: #FFFFFF;
+  --color-primary: #E88C9A;
+  --color-primary-foreground: #FFFFFF;
+  --color-accent: #C94F65;
+}
+
+:root {
+  --background: #FFF7F8;
+  --foreground: #2A2A2A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Image Normalization Utility — natural height, no forced aspect ratio */
+.premium-image-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  image-rendering: auto;
+  border-radius: 6px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-image-container:hover .premium-image {
+  transform: scale(1.02);
+}
+
+/* Float Animation for Premium Cards */
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-card-float {
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+
