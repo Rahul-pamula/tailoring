@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      # Mount local code for hot reloading
+      - .:/app
+      # Preserve container's node_modules and .next directories
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - WATCHPACK_POLLING=true # Helps with hot reloading on certain OS file systems
