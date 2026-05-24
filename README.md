@@ -8,7 +8,7 @@ This platform allows customers to browse custom-stitched catalog designs, submit
 
 ## 📸 Boutique Studio Preview
 
-![Rajeshwari Tailoring Boutique Studio](/images/studio_preview.png)
+![Rajeshwari Tailoring Boutique Studio](public/images/studio_preview.png)
 
 ---
 
