@@ -7,12 +7,12 @@ import { MessageCircle, Star, MapPin, Clock, ArrowRight } from 'lucide-react'
 export const revalidate = 60 // Revalidate every 60 seconds
 
 export default async function Home() {
-  // 1. Fetch featured designs (latest 3)
+  // 1. Fetch featured designs (latest 4)
   const { data: designs } = await supabase
     .from('designs')
     .select('*')
     .order('created_at', { ascending: false })
-    .limit(3)
+    .limit(4)
 
   // 2. Fetch latest approved reviews (latest 2)
   const { data: reviews } = await supabase
@@ -63,7 +63,7 @@ export default async function Home() {
           </Link>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4 gap-6">
           {designs?.length > 0 ? designs.map((design) => (
             <Link key={design.id} href={`/designs/${design.id}`}>
               <Card className="hover:border-primary/30 transition-all duration-200 cursor-pointer group flex flex-col">
